@@ -1,12 +1,3 @@
-**Dallas Personal Robotics Club**  
-Base Robotics code for the DPRG Club Robot kit
+#AVM robot code
 
-**Version History** 
-
-#DPRG Club Robot Display Drivers  
-    0.1.0 - Beta 1: First public beta - October 11, 2016  - Author: Steve Edwards
-  
-#DPRG Club Robot Navigation driver examples  
-    0.1.0 - Beta 1: First public beta - October 11, 2016  - Author: Doug Paradis
-    0.1.1 - Beta 2: Bug fixes         - October 20, 2016  - Author: Doug Paradis
- 
+Based on DPRG Club Robot by Steve Edwards and Doug Paradis.
