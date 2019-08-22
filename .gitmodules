@@ -1,0 +1,6 @@
+[submodule "libraries/Encoder"]
+	path = libraries/Encoder
+	url = https://github.com/PaulStoffregen/Encoder
+[submodule "libraries/PID_v1"]
+	path = libraries/PID_v1
+	url = https://github.com/br3ttb/Arduino-PID-Library/
