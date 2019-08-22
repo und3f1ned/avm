@@ -1,10 +1,4 @@
-/******************************************************************
-*
-*  task_def.h
-*  version: 20161011-0           Doug Paradis
-*  task definitions for DPRG Club Robot 2016.
-*
-******************************************************************/
+
 #ifndef TASK_DEF_H
 #define TASK_DEF_H
 
@@ -18,24 +12,26 @@
 #include "nav_funcs.h"
 #include "ultrasonic_funcs.h"
 #include "bumper_funcs.h"
-#include "claw_funcs.h"
+#include "head_funcs.h"
 #include "helpful_defines.h"
+#include "init.h"
 
-#define VERSION "BMARK-2.1.3 (clubRobot-0.0.1)"
+#define VERSION "AVM-0.1.3"
 #define WAIT(d)        \
     {                  \
         wake_after(d); \
     }
 
 #if (MACHINE == MACH_AVR) /* Mega2560, Mega328 Teensy-LC */
-#define PRINTF Serial3.println
+#define PRINTF Serial.println
 #define SPRINTF sprintf
 #endif
 
 // function prototypes
 
 void cpu_idle(ASIZE ignored);
-void claw(ASIZE delay);
+void head(ASIZE delay);
+void ultrasonic_task(ASIZE delay);
 void sensors(ASIZE delay);
 void move(ASIZE delay);
 void stats_task(ASIZE delay);

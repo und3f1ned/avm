@@ -1,11 +1,4 @@
-/******************************************************************
-*
-*  nav_funcs.h
-*  version: 20161011-0           Doug Paradis
-*  Navigation functions for DPRG Club Robot 2016.
-*  Based on work by David Anderson
-*
-******************************************************************/
+
 
 #ifndef NAV_FUNCS_H
 #define NAV_FUNCS_H
@@ -18,10 +11,10 @@
 #define PI 3.141593
 #define HALFPI 1.570796
 
-// For club robot with standard base, 100mm wheels, and encoders of 3292.4 pulses/revolution (100RPM motor model)
-#define R_MTR_CLICKS_PER_CM 104.8 // pulses/cm
-#define L_MTR_CLICKS_PER_CM 104.8 // pulses/cm
-#define WHEEL_BASE 23.25	  // 22.750   //24.8            // cm
+// For robot with 13.7 base, 64mm wheels, and encoders of 1920 pulses/revolution (120RPM motor model)
+#define R_MTR_CLICKS_PER_CM 95.5 / 2 // pulses/cm
+#define L_MTR_CLICKS_PER_CM 95.5 / 2 // pulses/cm
+#define WHEEL_BASE 13.7
 
 typedef struct loc_t
 {

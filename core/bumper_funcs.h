@@ -1,10 +1,4 @@
-/******************************************************************
-*
-*  bumper_funcs.h
-*  version: 20161011-0           Doug Paradis
-*  Bumper functions for DPRG Club Robot 2016.
-*
-******************************************************************/
+
 #ifndef BUMPER_FUNCS_H
 #define BUMPER_FUNCS_H
 

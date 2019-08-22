@@ -1,10 +1,4 @@
-/******************************************************************
-*
-*  helpful_defines.h
-*  version: 20161011-0           Doug Paradis
-*  misc defines for DPRG Club Robot 2016.
-*
-******************************************************************/
+
 
 #ifndef HELPFUL_DEFINES_H
 #define HELPFUL_DEFINES_H

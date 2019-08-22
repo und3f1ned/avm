@@ -1,10 +1,4 @@
-/******************************************************************
-*
-*  wpt_funcs.cpp
-*  version: 20161011-0           Doug Paradis
-*  Waypoint functions for DPRG Club Robot 2016.
-*
-******************************************************************/
+
 
 #ifndef WPT_FUNCS_H
 #define WPT_FUNCS_H

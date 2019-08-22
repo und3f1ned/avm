@@ -1,12 +1,4 @@
-﻿/******************************************************************
-*
-*  bumper_funcs.cpp
-*  version: 20161011-0           Doug Paradis
-*  Bumper functions for DPRG Club Robot 2016.
-*
-******************************************************************/
-
-#include "bumper_funcs.h"
+﻿#include "bumper_funcs.h"
 
 // global variables
 int bump_R = 32; // Arduino pin names
@@ -25,14 +17,14 @@ uint8_t test_bumpers()
 {
     uint8_t results = 0;
 
-    if (digitalRead(bump_R) == HIGH)
+    if (digitalRead(bump_R) == LOW)
     {
-	results |= (0x01);
+        results |= (0x01);
     }
 
-    if (digitalRead(bump_L) == HIGH)
+    if (digitalRead(bump_L) == LOW)
     {
-	results |= (0x02);
+        results |= (0x02);
     }
     return (results);
 }

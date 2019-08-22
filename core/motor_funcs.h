@@ -1,8 +1,4 @@
-/******************************************************************
-*  motor_funcs.h
-*  version: 20161020-0           Doug Paradis
-*
-******************************************************************/
+
 #ifndef MOTOR_FUNCS_H
 #define MOTOR_FUNCS_H
 
@@ -17,12 +13,9 @@
 #define BRAKEGND 3
 
 //externs
-extern int inApin[2]; // INA: Clockwise input
-extern int inBpin[2]; // INB: Counter-clockwise input
+extern int dirPin[2];
+
 extern int pwmpin[2]; // PWM input
-extern int cspin[2];  // CS: Current sense ANALOG input
-extern int enpin[2];  // EN: Status of switches output (Analog pin
-//extern int statpin;    // status LED pin 13 - not useful, covered by shield
 
 extern Encoder encRight; // Mega INT4 and INT5
 extern Encoder encLeft;  // Mega INT0 and INT1
