@@ -4,3 +4,12 @@
 [submodule "libraries/PID_v1"]
 	path = libraries/PID_v1
 	url = https://github.com/br3ttb/Arduino-PID-Library/
+[submodule "libraries/YetAnotherPcInt"]
+	path = libraries/YetAnotherPcInt
+	url = https://github.com/paulo-raca/YetAnotherArduinoPcIntLibrary
+[submodule "libraries/NewPing"]
+	path = libraries/NewPing
+	url = https://jdoesnot@bitbucket.org/teckel12/arduino-new-ping.git
+[submodule "libraries/EasyVR"]
+	path = libraries/EasyVR
+	url = https://github.com/fortebit/EasyVR-Arduino

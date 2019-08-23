@@ -15,7 +15,7 @@
 #include "wpt_funcs.h"
 
 LAYER *layers[LAYERS] =
-        {&bump,&motion,&ir,&boundary,&sonar,&photo,&xlate,&prowl,&stop};
+    {&bump, &motion, &ir, &boundary, &sonar, &photo, &xlate, &prowl, &stop};
 
 void printkbuf(char *s)
 {
@@ -30,7 +30,7 @@ void printkbuf(char *s)
 
 // Define Slave I2C Address
 #define SLAVE_ADDR 9
- 
+
 // Define Slave answer size
 #define ANSWERSIZE 5
 
@@ -42,16 +42,21 @@ int pir_L = 12;
 
 /* -------------------------------------- */
 
-void receiveEvent(int count) {
+void receiveEvent(int count)
+{
   // Read while data received
-  while (0 < Wire.available()) {
-    for(count; count > 0; count--){
+  while (0 < Wire.available())
+  {
+    for (count; count > 0; count--)
+    {
       commands[count - 1] = Wire.read();
       Serial3.print(commands[count - 1]);
-      if(count != 1){
+      if (count != 1)
+      {
         Serial3.print(",");
       }
-      else{
+      else
+      {
         Serial3.println();
       }
     }
@@ -60,18 +65,20 @@ void receiveEvent(int count) {
 
 /* -------------------------------------- */
 
-void requestEvent() {
+void requestEvent()
+{
   // Setup byte variable in the correct size
   byte response[ANSWERSIZE];
-  
+
   // Format answer as array
-  for (byte i=0;i<ANSWERSIZE;i++) {
+  for (byte i = 0; i < ANSWERSIZE; i++)
+  {
     response[i] = (byte)answer.charAt(i);
   }
-  
+
   // Send response back to Master
-  Wire.write(response,sizeof(response));
-  
+  Wire.write(response, sizeof(response));
+
   // Print to Serial Monitor
   Serial3.println("Request event");
 }
@@ -93,22 +100,25 @@ void led1(ASIZE delay)
 
 void init_pir()
 {
-    // setup pins
-    pinMode(pir_R, INPUT_PULLUP);
-    pinMode(pir_L, INPUT_PULLUP);
+  // setup pins
+  pinMode(pir_R, INPUT_PULLUP);
+  pinMode(pir_L, INPUT_PULLUP);
 
-    PcInt::attachInterrupt(pir_R, pir_change, "1", CHANGE);
-    PcInt::attachInterrupt(pir_L, pir_change, "2", CHANGE);
+  PcInt::attachInterrupt(pir_R, pir_change, "1", CHANGE);
+  PcInt::attachInterrupt(pir_L, pir_change, "2", CHANGE);
 }
 
-void pir_change(const char* message, bool pinstate)
+void pir_change(const char *message, bool pinstate)
 {
   LAYER motion;
   motion.flag = pinstate;
-  
-  if (pinstate == 0) {
+
+  if (pinstate == 0)
+  {
     motion.arg = 0;
-  } else {
+  }
+  else
+  {
     motion.arg = message;
     Serial3.print(1);
     Serial3.print(",");
@@ -137,10 +147,10 @@ void system_init(void)
   Serial3.begin(57600);
   // Initialize I2C communications as Slave
   Wire.begin(SLAVE_ADDR);
-  
+
   // Function to run when data requested from master
-  Wire.onRequest(requestEvent); 
-  
+  Wire.onRequest(requestEvent);
+
   // Function to run when data received from master
   Wire.onReceive(receiveEvent);
 #endif
@@ -169,7 +179,7 @@ int main()
   create_task("LED1", led1, 500, MINSTACK);
   create_task("US", ultrasonic_task, 33, MINSTACK * 2);
   create_task("SENSORS", sensors, 20, MINSTACK * 2); //40
-  create_task("HEAD",head,45,MINSTACK);        //45
+  create_task("HEAD", head, 45, MINSTACK);           //45
   create_task("MOVE", move, 10, MINSTACK * 2);       //25 //20
   create_task("IDLE", cpu_idle, 0, MINSTACK);
   //create_task("STATS",stats_task,10000,MINSTACK*4);
